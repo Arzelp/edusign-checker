@@ -2,7 +2,6 @@ import axios from 'axios';
 
 import {Request, Response} from 'express';
 import {AllCourses} from '../types/providerInterface';
-import {matchProperties} from "./utils/responseProperties";
 import {provideOptions} from './utils/provideOptions';
 import {tOptions} from '../types/utilsInterface';
 
@@ -15,6 +14,6 @@ export async function coursesProvider(req: Request, res: Response): Promise<void
         const test: AllCourses = {...edusignRes.data.result};
         res.status(200).send({data: test});
     } else {
-        console.log('TODO : Error'); // Todo
+        throw new Error(edusignRes.status + ' : ' + edusignRes.data);
     }
 }
