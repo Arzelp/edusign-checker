@@ -1,6 +1,4 @@
-//import {coursesProvider} from '../../src/providers/coursesProvider'
-import {allCourses} from '../../src/controllers/coursesController'
-import {coursesProvider} from '../../src/providers/coursesProvider';
+import {studentsProvider} from '../../src/providers/studentsProvider';
 
 const httpMocks = require('node-mocks-http');
 const req = httpMocks.createRequest();
@@ -25,7 +23,7 @@ describe('Courses provider test', () => {
                 status: 200,
                 data: "toto"
             })
-            const result = await coursesProvider(req, res);
+            const result = await studentsProvider(req, res);
             expect(mockedAxios.get).toHaveBeenCalled();
         })
         it('should throw error on bad status code', async () => {
@@ -33,7 +31,7 @@ describe('Courses provider test', () => {
                 status: 404,
                 data: null
             })
-            await expect(() => {return (coursesProvider(req, res))}).rejects.toThrow('404 : null')
+            await expect(() => {return (studentsProvider(req, res))}).rejects.toThrow('404 : null')
         })
     })
 

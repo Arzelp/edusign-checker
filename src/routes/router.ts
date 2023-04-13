@@ -1,6 +1,6 @@
 import express from 'express';
-const edusignController = require('../controllers/coursesController')
+const studentsController = require('../controllers/studentsController')
 
 export const router = express.Router();
 
-router.get('/courses/all', edusignController.allCourses);
+router.get('/students/all', studentsController.allStudents);
