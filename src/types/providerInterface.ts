@@ -1,8 +1,8 @@
-export interface AllCourses {
-    courses: [Course]
+export interface AllStudents {
+    courses: [Student]
 }
 
-export interface Course {
+export interface Student {
     id: string,
     email: string,
     username: string,
