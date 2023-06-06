@@ -1,8 +1,8 @@
 export interface AllStudents {
-    courses: [Student]
+    students: [Student]
 }
 
-export interface Student {
+export type Student = {
     id: string,
     email: string,
     username: string,

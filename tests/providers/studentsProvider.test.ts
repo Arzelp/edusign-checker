@@ -23,7 +23,7 @@ describe('Courses provider test', () => {
                 status: 200,
                 data: "toto"
             })
-            const result = await studentsProvider(req, res);
+            await studentsProvider(req, res);
             expect(mockedAxios.get).toHaveBeenCalled();
         })
         it('should throw error on bad status code', async () => {
